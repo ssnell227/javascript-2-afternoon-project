@@ -70,8 +70,8 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 function reversedLooper (letters) {
   letters.reverse().forEach(element => alert(element))
 }
-
-
+reversedLooper(letters)
+//seems like it works to me!
 
 
 ////////// PROBLEM 5 //////////
@@ -116,7 +116,12 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
   and the second item in the array being the odds array (all the odd values from numbersArray).
 */
 
-//Code Here
+function divider (numbersArray) {
+  let newArray = []
+  newArray.push(numbersArray.filter(number => number % 2 === 0))
+  newArray.push(numbersArray.filter(number=> number %2 !== 0))
+  return newArray
+}
 
 
 
@@ -174,13 +179,16 @@ function removeItem (myGroceryList, itemToRemove) {
   if (!myGroceryList || !itemToRemove) {
     return []
   } else if (myGroceryList.includes(itemToRemove))  {
-     myGroceryList.pop(myGroceryList.indexOf(itemToRemove))
+     myGroceryList.splice(myGroceryList.indexOf(itemToRemove), 1)
      return myGroceryList
+  } else {
+    return myGroceryList
   }
 }
 
+
 function addItem (myGroceryList, itemToAdd) {
-  if (!myGroceryList || !itemToRemove) {
+  if (!myGroceryList || !itemToAdd) {
     return []
   } else {
     myGroceryList.push(itemToAdd)
