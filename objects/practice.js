@@ -17,7 +17,9 @@ var arr = [10,20,30];
   Return the first item in the given array.
 */
 
-//Code Here
+function first (arr) {
+  return arr[0]
+}
 
 
 
@@ -32,7 +34,9 @@ var arr = [40,50,60];
   Return the last item in the given array.
 */
 
-//Code Here
+function last (arr) {
+  return (arr[arr.length - 1])
+}
 
 
 
@@ -47,8 +51,9 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
   Loop through the given array and alert every item in the array.
 */
 
-//Code Here
-
+function looper (family) {
+  family.forEach(element => alert(element))
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -62,7 +67,10 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
   Loop backwards, starting at the end of the letters array, alerting every item in the array.
 */
 
-//Code Here
+function reversedLooper (letters) {
+  letters.reverse().forEach(element => alert(element))
+}
+
 
 
 
@@ -77,10 +85,12 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
   Return an array that contains the even numbers from the nums array.
 */
 
-//Code Here
 
+function evenFinder (nums) {
+  return nums.filter(num => num % 2 === 0)
+}
 
-
+console.log(evenFinder(nums))
 
 
 
@@ -128,7 +138,10 @@ var getRandomArbitrary = function() {
   If it is, return true, if it's not, return false
 */
 
-//Code Here
+function finder (arr) {
+  let randomNumber = getRandomArbitrary();
+  return arr.includes(randomNumber)
+}
 
 
 
@@ -157,7 +170,23 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   addItem() --> [];
 */
 
-//Code Here
+function removeItem (myGroceryList, itemToRemove) {
+  if (!myGroceryList || !itemToRemove) {
+    return []
+  } else if (myGroceryList.includes(itemToRemove))  {
+     myGroceryList.pop(myGroceryList.indexOf(itemToRemove))
+     return myGroceryList
+  }
+}
+
+function addItem (myGroceryList, itemToAdd) {
+  if (!myGroceryList || !itemToRemove) {
+    return []
+  } else {
+    myGroceryList.push(itemToAdd)
+    return myGroceryList
+  }
+}
 
 
 
@@ -167,7 +196,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 */
 
-//Code Here
+function maker () {
+  let newArray = [];
+  for (let i = 1; i <216; i++) {
+    newArray.push(i)
+  }
+  return newArray
+}
 
 
 
@@ -183,8 +218,9 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
   Your output should look like this -> [15, 19, 26, 29, 35, 44, 58]
 */
   
-//Code Here
-
+function addTen (numbers) {
+  return numbers.map(element => Number(element) + 10)
+}
 
 
 ////////// PROBLEM 11 //////////
@@ -208,8 +244,9 @@ for(var i = 0; i < num2; i++){
   Return the longer of the two arrays.
 */
 
-//Code Here
-
+function longer (arr1, arr2) {
+  return (arr1.length > arr2.length ?  arr1 : arr2)
+}
 
 
 /*
@@ -220,7 +257,17 @@ for(var i = 0; i < num2; i++){
   Example: var arr1 = [1,2,3,4]; var arr2 = [2,4,5,6]; newArray // [2,4]
 */
 
-//Code Here
+function both (arr1, arr2) {
+  let newArray = [];
+  arr1.forEach(element => {
+    if (arr2.includes(element)) {
+      newArray.push(element)
+    }
+  })
+  return newArray
+}
+
+console.log(arr1, arr2, both(arr1, arr2))
 
 
 
@@ -261,7 +308,8 @@ var colt = {
   After that, console.log the length of the Array and make sure that it's equal to 4. 
 */
 
-//Code Here
+devMountainEmployees.push(joe, cahlan, ryan, colt)
+console.log(devMountainEmployees.length)
 
 
 
@@ -270,7 +318,11 @@ var colt = {
   Loop through your devMountainEmployees until you find cahlan, then remove him from the array.
 */
 
-//Code Here
+devMountainEmployees.forEach(employee => {
+  if (employee.name === 'Cahlan') {
+    devMountainEmployees.splice(devMountainEmployees.indexOf(employee), 1)
+  }
+})
 
 
 
@@ -282,7 +334,7 @@ var colt = {
   Create an empty array called users.
 */
 
-//Code Here
+const users = [];
 
 
 
@@ -303,7 +355,17 @@ var user1 = {
 };
 // Do not edit the code above.
 
-//Code Here
+users.push(user1, {
+  name: 'Bob',
+  email: 'bob@bob.bob',
+  password: 'bob12345',
+  username: 'thebobbiest'
+}, {
+  name: 'Jim',
+  email: 'jim@jim.jim',
+  password: '12345jim',
+  username: 'thejimmiest'
+})
 
 
 
@@ -317,7 +379,9 @@ var user1 = {
   Once you find the array index he's located in, delete him from the array.
 */
 
-//Code Here
+
+users.splice(users.findIndex(user => user.email === 'mark.mciver@devmounta.in'), 1)
+
 
 
 
